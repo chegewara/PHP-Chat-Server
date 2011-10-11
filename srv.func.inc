@@ -61,7 +61,7 @@ function check($user,$pass,$socket,$mode="login") {
 		$xuery="SELECT * FROM users WHERE user='".$user1."' AND pass='".$pass."' ;";
 		$check=$db->query($xuery);
 		if (!$db->numRows($check)) {
-			outp("Wrong login attempt for user \"".$user."\" from user \"".$usr[$i]."\"@socket ".$i."!",'x');
+			outp("Wrong login attempt for user \"".$user."\" from user \"".$usr[$i]["name"]."\"@socket ".$i."!",'x');
 			socket_close($socket);
 			unset($socket);
 			return "ERR";
